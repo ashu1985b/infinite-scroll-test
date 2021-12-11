@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+.container {
+  max-width: 1170px;
+  padding: 0 16px;
+  margin: 0 auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loader {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 32px 0;
 }
-
-.App-link {
-  color: #61dafb;
+.loader__icon {
+  width: 48px;
+  animation: app-logo-spin infinite 20s linear;
 }
-
-@keyframes App-logo-spin {
+.container--main {
+  padding: 32px 16px;
+}
+.app__header {
+  background-color: #fff;
+  box-shadow: 0 1px 2px #a6b0c2;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.app__header__logo {
+  width: 48px;
+  pointer-events: none;
+  animation: app-logo-spin infinite 20s linear;
+}
+.app__header__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 12px;
+}
+@keyframes app-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+}
+.card-container > * {
+  flex: 0 0 100%;
+  padding: 0 8px 16px;
+}
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px #dadada;
+}
+.card__body {
+  padding-top: 60%;
+  position: relative;
+}
+.card__body > img {
+  position: absolute;
+  top:0;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.card__footer {
+  padding: 12px;
+  font-size: 14px;
+}
+.card__tag {
+  display: inline-block;
+  padding: 1px 6px;
+  background-color: #c7cfdf;
+  font-size: 12px;
+  border-radius: 10px;
+  margin: 2px 0;
+}
+@media  screen and (min-width: 540px)  {
+  .card-container > * {
+    flex-basis: 50%;
+  }
+}
+@media  screen and (min-width: 768px)  {
+  .card-container > * {
+    flex-basis: 33.33%;
   }
 }
